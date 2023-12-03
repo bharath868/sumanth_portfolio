@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
-
+html{
+  scroll-behavior: smooth;
+}
 
 .reveal{
   position: relative;
   transform: translateY(1500px);
   opacity: 0;
+  background-color: transparent;
   transition: 0.2s all ease;
 }
 
@@ -63,6 +66,7 @@
 #head a{
   padding: 0.5%;
   box-shadow: 1px 1px 1px #34353b;
+  border-radius: 5px;
   transform: scale(0.9);
   transition: 0.3s linear;
  
@@ -177,27 +181,31 @@ h1{
 
 .icons{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .icons a{
     height: 15%;
     width: 5%;
-    display: flex;
-    border: 1px solid ;
     border-radius: 10%;
     padding: 1%;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
     animation: down linear 3s 1 ;  
-    text-decoration: none;
-    transform: scale(1);
-    transition: 0.3s;
-    align-items: center;
-
+    transition: 0.3s linear;
+    border:none;
 }
-
+.icons a:hover{
+  transform: scale(1.2);
+}
+.icons .icon img{
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 1ch;
+  box-shadow: none;
+  
+}
 
 
 @keyframes down {
@@ -286,6 +294,7 @@ h1{
   background-color: blue;
   margin-left: 8%;
   border: none;
+  color: #ebecef;
   border-radius: 5px;
   padding: 7px;
   box-shadow: 2px 2px 15px 0.2px rgb(85, 196, 237);
@@ -384,7 +393,7 @@ h1{
 
 
 
-img{
+.internship .img img, .certificates img{
   height: 65%;
   width: 95%;
   border: 1px solid #000;
@@ -399,12 +408,51 @@ img{
 
 
 /* -----------------Projects css -----------------*/
-#inter #personal{
+.personal{
   display: grid ;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.internship{
+  display:block;
+  width:98%;
 
+}
+.personal .inter, .internship .inter{
+  background-color: rgba(156, 155, 155, 0.411);
+  display:flex;
+  transition: all linear 0.3s;
+  padding:10px;
+  margin-bottom: 8%;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(43, 42, 42, 0.6);
+}
+.inter:hover{
+  background-color: rgb(156, 155, 155);
+}
+.personal .inter a{
+  margin-left: 30%;
+  width:7rem;
+  
+}
+.inter p, .inter h3, .inter a{
+  background-color:initial;
 
-
+}
+.inter a button{
+  width:100%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 255, 0.623);
+  color:rgb(211, 206, 206);
+  border-radius: 5px;
+  border:none;
+  padding:2px;
+  box-shadow: 3px 3px 5px blue;
+  transition:all ease 0.4s;
+}
+.inter a button:hover,.inter a button:focus{
+  transform:scale(0.9);
 }
  #inter ,#personal{
   border:1px solid rgb(5, 183, 242);
@@ -465,7 +513,7 @@ h1{
   color: black;
 
 }
-
+/* ----------------------------------certificate css end---------------------------- */
 
 
 
@@ -527,7 +575,23 @@ input,textarea{
   padding: 30PX;
 
 }
-
+.back{
+  text-decoration: none; 
+  position: fixed;
+  padding:5px;
+   bottom: 0; 
+   right: 0;
+   border-radius: 60%; 
+  border: 1px solid aqua;
+  
+}
+.back span{
+  color:aqua;
+}
+.back:hover span, .back:hover{
+  background-color: aqua;
+  color:black;
+}
 /* --------------------------footer css ended------------------------------------ */
 
 
