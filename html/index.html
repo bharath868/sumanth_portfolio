@@ -6,8 +6,63 @@
     <title>Profile</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+
+<!-- --------------java script ------- -->
 <script>
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  var pic = document.querySelectorAll("#pic");
+  var reveal = document.querySelectorAll(".reveal");
+  var about = document.querySelectorAll("#about");
+
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+
+  for (var i = 0; i < pic.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = pic[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      pic[i].classList.add("active");
+    } else {
+      pic[i].classList.remove("active");
+    }
+  }
+
+  
+  for (var i = 0; i < reveal.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveal[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveal[i].classList.add("active");
+    } else {
+      reveal[i].classList.remove("active");
+    }
+  }
+
+
+    
+
+}
+
+window.addEventListener("scroll", reveal);
+
     function fun(str1){
         var s1=document.getElementsByClassName('items')
         if (str1=='about'){
@@ -27,36 +82,239 @@
         }
     }
 </script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+    function sendEmail() {
+        var your_name = document.getElementById("your_name").value;
+        var your_email = document.getElementById("your_email").value;
+        var subject = document.getElementById("subject").value;
+        var description = document.getElementById("description").value;
+        console.log(your_name)
 
+        if (your_name.length !== 0){
+            if (your_email.length !== 0){
+                if (subject.length !== 0){
+                    if (description.length !== 0){
+                        
+                        Email.send({
+                            SecureToken : "fdf2d17c-b33e-484d-86e9-1d92f2786a1e",
+                            To: "bommu7997@gmail.com",
+                            From: "yr257034@gmail.com",
+                            Subject: subject,
+                            Body: 'Name: ' + your_name +'  E-Mail:  '+your_email + '<br>Message: ' + description,
+                            }).then(
+                                message => alert(message),
+                            );
+
+                    }else{
+                        alert("Please Enter Description")
+                    }
+                }else{
+                    alert("Please Enter Subject")
+                }
+            }else{
+                    alert("Please Enter Email-id")
+                }
+        }else{
+                    alert("Please Enter Your Name")
+                }
+    }
+</script>
+<!-- ------------javascript ended  -->
 
 </head>
 <body>
-    <div id="head">
-        <button class="items" onclick="fun('index')">Home</button>
-        <button class="items" onclick="fun('about')">About</button>
-        <button class="items"onclick="fun('Skills')">Skills</button>
-        <button class="items"onclick="fun('portfolio')">Potfolio</button>
-        <button class="items" onclick="fun('contact')">Contact</button>
-    </div>
-    <div id="pic">
-        <img src="pic.png">
-        <div id="about">
-            <h4><b>Hi, It's Me</b></h4> <br>
-            <h1>I'm Sumanth</h1> <br>
-            I'm professional web Developer.Our Main Goal to help & <br>
-            Satisficed the Local & Global Clients by web Development solutions
 
-            <div class="icons">
-                <a href="#" id="linked" class="fa fa-linkedin"></a>
-                <a href="#" id="insta" class="fa fa-instagram"></a>
-                <a href="#" id="git" class="fa fa-github"></a>
-                <a href="#" id="face" class="fa fa-facebook"></a>
+<!-- -------navbar title --------- -->
+    <div id="head">
+        <a href="#home" class="items">Home</a>
+        <a href="#me" class="items">About</a>
+        <a href="#skill"class="items">Skills</a>
+        <a href="#internship" class="items">Internships</a>
+        <a href="#projects" class="items">Projects</a>
+        <a href="#certifications" class="items">Certifications</a>
+        <a href="#contact" class="items">Contacts</a>
+
+       
+    </div>
+
+<!-- ----------navbar title ended----------- -->
+
+
+
+<!-- ------------home page -------------- -->
+    <div id="home" >
+        <div id="pic">
+            <img src="pic.png">
+            <div id="about">
+                <h4><b>Hi, It's Me</b></h4> <br>
+                <h1>P SUMANTH REDDY</h1>
+                I'm an aspiring data scientist with a strong foundation in data analysis and a B.Tech degree. 
+                I'm eager to apply my skills to extract actionable insights from data and drive data-driven decisions in a dynamic role.
             </div>
+               
         </div>
     </div>
- 
-    <div class="footer">
-        @2023 MY WEBSITE ALL RIGHTS RESERVERD
+  
+     <!-- ----------home page ended ----------- -->
+     
+    <!-- ------------name and cv ---------- -->
+    <div id="name" >
+        <div>P SUMANTH REDDY</div>
     </div>
+        <a href="SUMANTH.pdf" id="download">
+            <button id="download_style">Download CV</button>
+        </a>
+     
+    </div>
+  
+    <!-- ------------name and cv ended ---------- -->
+
+
+<!-- ---------about -------- -->
+
+<h1 id="me" class="reveal">About</h1>
+<div class="about" >
+    <div id="pic">
+        <div id="about">
+            <div id="center">
+                <p>  I am Sumanth Reddy, a recent B.Tech graduate with practical experience in data analysis through projects like "Pizza Sales Analysis" 
+                    and "Employee Attendance Analysis" during my training with Learnbay.
+                    I'm eager to apply my skills and knowledge in a data science or data analysis role, ready to contribute and grow in the field.
+         </p>
+         
+             </div>
+        </div>
+        <img src="pic.png">
+    </div>
+</div>
+  
+<!-- -------------about ended ---------- -->
+
+
+<!-- --------------skills ------------- -->
+
+<h1 id="skill" class="reveal">Skills</h1>
+<div  class="skills" id="skills" >
+
+    <div class="reveal">Python</div>
+    <div class="reveals">Statistics</div>
+    <div class="reveal">Algorithms</div>
+    <div class="reveal">Preprocessing</div>
+    <div class="reveals">Data Visualization</div>
+    <div class="reveal">SQL</div>
+    <div class="reveal">Spark</div>
+    <div class="reveals">Communication</div>
+    <div class="reveal">Problem-solving</div>
+    <div class="reveals">Git</div>
+</div>
+<!-- ----------------skills ended--------------- -->
+ 
+
+
+
+<!-- ---------------internship------------------ -->
+<h1 id="internship" class="reveal">Internships</h1>
+<div class="internship" >
+ <div class="img">
+    <img src="codsoft.jpg" alt="">
+    <img src="Psyliq.jpg" alt="">
+    <img src="lets_grow_more.jpg" alt="">
+
+ </div>
+</div>
+
+<!-- -------------intership ended ---------- -->
+
+
+
+
+<!-- -----------------projects ------------- -->
+
+<div class="projects" id="projects">
+<h1 class="reveal" id="project_title">Projects</h1>
+<h1 class="reveal">Internship Projects</h1>
+<div class="internship">
+
+    <img id="inter" src="pic.png" alt="">
+    <img id="inter" src="pic.png" alt="">
+    <img id="inter" src="pic.png" alt="">
+
+</div>
+<h1 class="reveal">Personal Projects</h1>
+<div class="personal">
+    <img id="personal" src="pic.png" alt="">
+    <img id="personal" src="pic.png" alt="">
+
+</div> 
+    
+    
+
+
+
+
+</div>
+
+<!-- --------------------projects ended--------------- -->
+
+
+
+<!-- -------------certificates ------------------- -->
+<h1 id="certifications" class="reveal">Certificates</h1>
+<div class="certificates" id="certificates" >
+  
+        <img src="learnbay.jpg" alt="PYTHON">
+        
+        <img src="PYTHON.jpeg" alt="PYTHON">
+        <img src="OOPS.jpg" alt="oops">
+        <img src="Data_structures_certificate.jpg" alt="Data structures certificate">
+        <img src="ML.jpg" alt="Machine Learning">
+        
+
+</div>
+
+
+<!-- -------------certificates ended ------------------ -->
+
+
+
+
+<!-- -----------------contact details ------------------>
+<h1 id="contact" class="reveal">Contact Details</h1>
+    <form method="post" class="form" action="#">
+        <div>
+            <input type="text" id="your_name" placeholder="your name" name="your_name" required>
+        </div>
+        <div>
+            <input type="email" id="your_email" placeholder="your E-mail" name="your_email" required>
+        <div>
+            <input type="text" id="subject" placeholder="Subject" name="subject" required>
+        </div>
+        <div>
+            <textarea rows="10" cols="40" id="description" placeholder="Description" name="description" required></textarea>
+        </div>
+
+        <div>
+            <input type="button" id="submit" value="submit"  onclick="sendEmail()" />
+        </div>
+    </form>
+<!-- ----------contact details ended ------------- -->
+<div class="icons">
+    <a href="#" id="linked" class="fa fa-linkedin"></a>
+    <a href="#" id="git" class="fa fa-github"></a>
+ </div>
+
+
+<span class="material-symbols-outlined" id="head">
+    arrow_upward
+    </span>
+
+<!-- -----------------footer ------------------- -->
+
+    <div class="footer">
+        &copy; 2023 SUMANTH ALL RIGHTS RESERVED.
+    </div>
+
+<!-- -----------------footer ended --------------- -->
 </body>
 </html>

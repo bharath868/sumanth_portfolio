@@ -3,6 +3,7 @@
     color: white;
     font-size: 20px;
     margin: 1%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -14,8 +15,6 @@
     margin-left: 10%;
     display: flex;
     justify-content: flex-end;
-    width: 30%;
-    height: 30%;
 
 
 }
@@ -52,10 +51,10 @@ button{
 
 fieldset{
     margin-top: 5%;
-    margin-left: 30%;
+    margin-left: 20%;
     border: soild 1px white;
     height: 40%;
-    width: 40%;
+    width: 60%;
     line-height: 4ch;
     color: white;
 
@@ -65,7 +64,21 @@ fieldset{
     box-shadow: 0.3ch 0.3ch 5ch 1ch rgb(129, 129, 128);
     text-align: center;
     padding: 10px auto;
+    animation: down linear 0.9s 1 ;
+
 }
+
+@keyframes down {
+    from {
+  
+      transform: translateX(-110%);
+    }
+    to {
+      /* returns the sun to its default position */
+      transform: translateX(0%);
+    }
+  }
+
 
 legend{
     border:1px solid white   ;
@@ -78,5 +91,36 @@ legend{
 .footer{
     text-align: center;
     padding: 30PX;
+
+}
+
+
+@media screen and (max-device-width:428px),screen and (max-width:428px) 
+{
+  *{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
+
+
+
+@media screen and (max-device-width:237px),screen and (max-width:237px) 
+{
+  *{
+    font-size: 8px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
+
+
+@media screen and (max-device-width:190px),screen and (max-width:190px) 
+{
+  *{
+    font-size: 6px;
+    font-family: 'Times New Roman', Times, serif;
+  }
 
 }

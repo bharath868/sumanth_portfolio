@@ -2,6 +2,7 @@
     background-color: black;
     color: white;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
     margin: 1%;
 }
 
@@ -13,10 +14,7 @@
     margin-left: 10%;
     display: flex;
     justify-content: flex-end;
-    width: 30%;
-    height: 30%;
-
-
+ 
 }
 
 button{
@@ -48,15 +46,42 @@ button{
 }
 
 
+.head{
+    margin: 10%;
 
+    border: soild 1px white;
+    height: 80%;
+    width: 80%;
+    line-height: 4ch;
+    color: white;
+    padding: 3px;
+    border-radius: 20px;
+    box-shadow: -0.3ch -0.3ch 5ch 1ch rgb(128, 128, 128);
+    box-shadow: 0.3ch 0.3ch 5ch 1ch rgb(129, 129, 128);
+    text-align: center;
+}
+
+.tile{
+    border:1px solid white   ;
+    border-radius: 8px;
+    box-shadow: -0.3ch -0.3ch 1ch 1ch rgb(128, 128, 128);
+    box-shadow: 0.3ch 0.3ch 1ch 1ch rgb(129, 129, 128);
+}
+
+img{
+    height: 65%;
+    width: 95%;
+    border: 1px solid #000;
+    border-radius: 1ch;
+}
 
 
 fieldset{
     margin-top: 10%;
-    margin-left: 27%;
+    margin-left: 20%;
     border: soild 1px white;
     height: 20%;
-    width: 40%;
+    width: 60%;
     line-height: 4ch;
     color: white;
 
@@ -65,7 +90,23 @@ fieldset{
     box-shadow: -0.3ch -0.3ch 5ch 1ch rgb(128, 128, 128);
     box-shadow: 0.3ch 0.3ch 5ch 1ch rgb(129, 129, 128);
     padding: 10px auto;
+
+
+    animation: down linear 0.9s 1 ;
+
 }
+
+@keyframes down {
+    from {
+  
+      transform: translateX(110%);
+    }
+    to {
+      /* returns the sun to its default position */
+      transform: translateX(0%);
+    }
+  }
+  
 
 legend{
     border:1px solid white   ;
@@ -82,3 +123,45 @@ legend{
 
 }
 
+
+@media screen and (max-device-width:428px),screen and (max-width:428px) 
+{
+  *{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
+
+
+@media screen and (max-device-width:428px),screen and (max-width:428px) 
+{
+  *{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
+
+
+
+@media screen and (max-device-width:237px),screen and (max-width:237px) 
+{
+  *{
+    font-size: 8px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
+
+
+
+
+@media screen and (max-device-width:190px),screen and (max-width:190px) 
+{
+  *{
+    font-size: 6px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+}
